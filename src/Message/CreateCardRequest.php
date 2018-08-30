@@ -6,7 +6,7 @@ class CreateCardRequest extends AbstractRequest
 {
     public function getEndpoint()
     {
-        $endPoint =  $this->getTestMode() ? $this->testHost : $this->host;
+        $endPoint = $this->getTestMode() ? $this->getSandboxEndPoint() : $this->getProductionEndPoint();
         return $endPoint . '/tokens';
     }
 

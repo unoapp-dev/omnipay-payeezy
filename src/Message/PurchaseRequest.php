@@ -8,7 +8,7 @@ class PurchaseRequest extends AbstractRequest
 {
     public function getEndpoint()
     {
-        return $this->getTestMode() ? $this->testHost : $this->host;
+        return $this->endpoint = $this->getTestMode() ? $this->getSandboxEndPoint() : $this->getProductionEndPoint();
     }
 
     public function getData()
