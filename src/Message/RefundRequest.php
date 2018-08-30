@@ -8,7 +8,7 @@ class RefundRequest extends AbstractRequest
 {
     public function getEndpoint()
     {
-        $endPoint =  $this->endpoint = $this->getTestMode() ? $this->getSandboxEndPoint() : $this->getProductionEndPoint();
+        $endPoint = $this->getTestMode() ? $this->getSandboxEndPoint() : $this->getProductionEndPoint();
         
         try {
             $transactionReference =  json_decode($this->getTransactionReference());
